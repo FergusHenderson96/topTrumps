@@ -22,9 +22,9 @@ const buttonSpecialDefence = document.getElementById("buttonSpecialDefence");
 const buttonSpeed = document.getElementById("ButtonSpeed");
 
 
-
+if (playerTurnNum.innerHTML == 0) {
 button1.addEventListener("click", () => {
-  
+  playerTurnNum.innerHTML =+ 1
 const randomNumber = Math.floor(Math.random() * 100)
 const data = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}/`)
 .then((Response) => Response.json())
@@ -40,18 +40,22 @@ const data = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}/`)
   pokeName1.innerHTML = name1;
   pokeHp1.innerHTML = hp1;
   pokeAttack1.innerHTML = attack1;
-  
   pokeDefence1.innerHTML = defence1;
   pokeSpecialAttack1.innerHTML = specialAttack1;
   pokeSpecialDefence1.innerHTML = specialDefence1;
   pokeSpeed1.innerHTML = speed1;
   
   console.log(name1, hp1, attack1, defence1, specialAttack1, specialDefence1, speed1);
+
 });
+
 })
 
-button2.addEventListener("click", () => {
+}
 
+if (playerTurnNum.innerHTML == 1) {
+button2.addEventListener("click", () => {
+  playerTurnNum.innerHTML =- 1
 const randomNumber2 = Math.floor(Math.random() * 100)
 const data2 = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber2}/`)
 .then((Response) => Response.json())
@@ -74,9 +78,10 @@ const data2 = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber2}/`)
 
   console.log(name2, hp2, attack2, defence2, specialAttack2, specialDefence2, speed2);
 });
+
 })
 
-
+}
 
 
 
@@ -123,18 +128,4 @@ const data2 = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber2}/`)
 
 //} 
 
-//console.log(randomPokemon)
-
-
-  //  eats(){
-    // console.log("nom nom nom")
-//  }
-  //  drinks(){
-   //  console.log("slurp")
-  //}
-  //  sleep(){
-  //    console.log("zzzzzzz")
-  //  }
-   
- // }
   
