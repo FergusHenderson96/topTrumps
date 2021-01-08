@@ -14,8 +14,12 @@ const pokeDefence2 = document.getElementById("defence2");
 const pokeSpecialAttack2 = document.getElementById("specialAttack2");
 const pokeSpecialDefence2 = document.getElementById("specialDefence2");
 const pokeSpeed2 = document.getElementById("speed2");
-
-
+const buttonHP = document.getElementById("buttonHp");
+const buttonAttack = document.getElementById("buttonAttack");
+const buttonDefence = document.getElementById("buttonDefence");
+const buttonSpecialAttack = document.getElementById("buttonSpecialAttack");
+const buttonSpecialDefence = document.getElementById("buttonSpecialDefence");
+const buttonSpeed = document.getElementById("ButtonSpeed");
 
 
 
@@ -36,6 +40,7 @@ const data = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}/`)
   pokeName1.innerHTML = name1;
   pokeHp1.innerHTML = hp1;
   pokeAttack1.innerHTML = attack1;
+  
   pokeDefence1.innerHTML = defence1;
   pokeSpecialAttack1.innerHTML = specialAttack1;
   pokeSpecialDefence1.innerHTML = specialDefence1;
