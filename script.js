@@ -1,5 +1,5 @@
-const button1 = document.getElementById("generateCard1");
-const button2 = document.getElementById("generateCard2");
+const button = document.getElementById("generateCards");
+const nextRound = document.getElementById("nextRound");
 const pokeName1 = document.getElementById("name1");
 const pokeHp1 = document.getElementById("hp1");
 const pokeAttack1 = document.getElementById("attack1");
@@ -20,11 +20,15 @@ const buttonDefence = document.getElementById("buttonDefence");
 const buttonSpecialAttack = document.getElementById("buttonSpecialAttack");
 const buttonSpecialDefence = document.getElementById("buttonSpecialDefence");
 const buttonSpeed = document.getElementById("ButtonSpeed");
+let playerNum = document.getElementById("playerTurnNum");
 
 
-if (playerTurnNum.innerHTML == 0) {
-button1.addEventListener("click", () => {
-  playerTurnNum.innerHTML =+ 1
+let choice = "";
+
+
+
+button.addEventListener("click", () => {
+  
 const randomNumber = Math.floor(Math.random() * 100)
 const data = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}/`)
 .then((Response) => Response.json())
@@ -49,13 +53,6 @@ const data = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}/`)
 
 });
 
-})
-
-}
-
-if (playerTurnNum.innerHTML == 1) {
-button2.addEventListener("click", () => {
-  playerTurnNum.innerHTML =- 1
 const randomNumber2 = Math.floor(Math.random() * 100)
 const data2 = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber2}/`)
 .then((Response) => Response.json())
@@ -77,11 +74,56 @@ const data2 = fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber2}/`)
   pokeSpeed2.innerHTML = speed2;
 
   console.log(name2, hp2, attack2, defence2, specialAttack2, specialDefence2, speed2);
+
+});
 });
 
-})
 
-}
+buttonHP.addEventListener("click", () => {
+  if (hp1 > hp2){
+    score1.innerhtml++
+  }else {
+    score2.innerhtml++
+  }});
+
+  buttonAttack.addEventListener("click", () => {
+    if (attack1 > attack2){
+      score1.innerhtml++
+    }else {
+      score2.innerhtml++
+    }});
+
+    buttonDefence.addEventListener("click", () => {
+      if (defence1 > defence2){
+        score1.innerhtml++
+      }else {
+        score2.innerhtml++
+      }});
+
+      buttonSpecialAttack.addEventListener("click", () => {
+        if (specialAttack1 > specialAttack2){
+          score1.innerhtml++
+        }else {
+          score2.innerhtml++
+        }});
+
+        buttonSpecialDefence.addEventListener("click", () => {
+          if (specialDefence1 > specialDefence2){
+            score1.innerhtml++
+          }else {
+            score2.innerhtml++
+          }});
+          
+          buttonSpeed.addEventListener("click", () => {
+            if (speed1 > speed2){
+              score1.innerhtml++
+            }else {
+              score2.innerhtml++
+            }});
+
+
+
+
 
 
 
